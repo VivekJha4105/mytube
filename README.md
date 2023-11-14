@@ -2,6 +2,7 @@
 
 - Head
 - Body
+
   - Sidebar
     - MenuItems
   - MainContainer
@@ -9,3 +10,6 @@
       -Buttons
     - VideoContainer
     - VideoCard
+
+- Get to know about Redux Chrome Extension functinality.
+- Browser's native Params and Query manupilation.

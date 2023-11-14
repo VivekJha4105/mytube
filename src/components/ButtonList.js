@@ -48,12 +48,12 @@ const ButtonList = () => {
   const handlePrevClick = () => {
     if (!box.clientWidth) return;
     let width = box.clientWidth;
-    box.scrollLeft = box.scrollLeft - width * 2;
+    box.scrollLeft = box.scrollLeft - width;
   };
   const handleNextClick = () => {
     if (!box.clientWidth) return;
     let width = box.clientWidth;
-    box.scrollLeft = box.scrollLeft + width * 2;
+    box.scrollLeft = box.scrollLeft + width;
   };
   return (
     <div className="relative overflow-hidden">

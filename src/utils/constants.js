@@ -7,12 +7,8 @@ export const YOUTUBE_LOGO =
 export const USER_ICON =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVyxHQ639ZprZ6BjMxfeO8y-MXA3eS-LmGKQ&usqp=CAU";
 
-export const GOOGLE_API_KEY = "AIzaSyDJMJWKHSe3ImquL8pow4VDvGP-16Prq8E";
+export const POPULAR_VIDEOS_API =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=AIzaSyDJMJWKHSe3ImquL8pow4VDvGP-16Prq8E";
 
-export const YT_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=" +
-  GOOGLE_API_KEY;
-
-/**
- * ? GOOGLE_myTube_PROJECT_ID = "mytube - 405008
- */
+export const YT_SEARCH_API =
+  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
