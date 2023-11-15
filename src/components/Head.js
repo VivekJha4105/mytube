@@ -5,14 +5,16 @@ import {
   YOUTUBE_LOGO,
   YT_SEARCH_API,
 } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchSuggestionsList, setSearchSuggestionsList] = useState([]);
   const [showSuggestion, setShowSuggestion] = useState(false);
   const dispatch = useDispatch();
+  const searchCache = useSelector((store) => store.search.searchSuggestions);
 
   const handleMenuToggle = () => {
     dispatch(toggleMenu());
@@ -22,16 +24,24 @@ const Head = () => {
     const res = await fetch(YT_SEARCH_API + searchQuery);
     const data = await res.json();
     setSearchSuggestionsList(data[1]);
-    // console.log(data);
+
+    // Update cache with the search suggestions result.
+    dispatch(
+      cacheResults({
+        [searchQuery]: data[1],
+      })
+    );
   };
 
   useEffect(() => {
-    // Making API calls after every key stroke.
-    // If difference b/w consecutive key stroke is <200ms, decline API call.
-
-    // Set debounce to put in the above in action, dicard the timeout to decline API Call.
-
-    const timerId = setTimeout(() => getSearchSuggestions(), 300);
+    const timerId = setTimeout(() => {
+      // Check if search results for the current searchQuery is already in cache.
+      if (searchCache[searchQuery]) {
+        setSearchSuggestionsList(searchCache[searchQuery]);
+      } else {
+        getSearchSuggestions();
+      }
+    }, 500);
 
     // return of useEffect() is called when this component is unmounted, due to any reason.
     return () => clearTimeout(timerId);
