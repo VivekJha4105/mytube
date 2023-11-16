@@ -19,18 +19,18 @@ const LiveChat = () => {
     setLiveMessage("");
   };
 
-  useEffect(() => {
-    const timerId = setInterval(() => {
-      //   API Polling.
-      dispatch(
-        addChatMessage({
-          name: getRandomName(),
-          message: getRandomText(Math.floor(Math.random() * 10 + 10)),
-        })
-      );
-    }, 1000);
-    return () => clearInterval(timerId);
-  }, []);
+  // useEffect(() => {
+  //   const timerId = setInterval(() => {
+  //     //   API Polling.
+  //     dispatch(
+  //       addChatMessage({
+  //         name: getRandomName(),
+  //         message: getRandomText(Math.floor(Math.random() * 10 + 10)),
+  //       })
+  //     );
+  //   }, 1000);
+  //   return () => clearInterval(timerId);
+  // }, []);
 
   return (
     <div className="w-[45%]">
@@ -44,8 +44,9 @@ const LiveChat = () => {
         className="m-2 p-2 w-[100%] flex items-center rounded-lg bg-red-400"
         onSubmit={(e) => e.preventDefault()}
       >
-        <input
+        <textarea
           className="m-2 p-2 w-[75%] outline-none rounded-l-lg overflow-auto"
+          rows={3}
           type="text"
           value={liveMessage}
           onChange={(e) => setLiveMessage(e.target.value)}

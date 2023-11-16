@@ -30,7 +30,7 @@ const WatchPage = () => {
         ></iframe>
         <LiveChat />
       </div>
-      <CommentContainer />
+      <CommentContainer videoId={searchParams.get("v")} />
     </div>
   );
 };

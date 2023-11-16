@@ -7,27 +7,28 @@ const Sidebar = () => {
 
   return (
     isMenuOpen && (
-      <div className="p-4 w-[13%]">
+      <div className="absolute p-4 w-[13%] h-fit bg-slate-300">
         <ul className="text-xl font-bold">
           <Link>
-            <li className="p-2 rounded-xl hover:bg-gray-300">Home</li>
+            <li className="p-2 rounded-xl hover:bg-gray-400">Home</li>
           </Link>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Shorts</li>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Live</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Shorts</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Live</li>
         </ul>
         <h1 className="py-2 text-2xl font-bold rounded-xl">Explore</h1>
         <ul>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Music</li>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Sports</li>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Gaming</li>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Movies</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Music</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Sports</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Gaming</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Movies</li>
         </ul>
         <h1 className="py-2 text-2xl font-bold rounded-xl">Subscriptions</h1>
         <ul>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Channel 01</li>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Channel 02</li>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Channel 03</li>
-          <li className="p-2 rounded-xl hover:bg-gray-300">Channel 04</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Channel 01</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Channel 02</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Channel 03</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Channel 04</li>
+          <li className="p-2 rounded-xl hover:bg-gray-400">Channel 04</li>
         </ul>
       </div>
     )

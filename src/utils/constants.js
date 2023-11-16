@@ -13,4 +13,7 @@ export const POPULAR_VIDEOS_API =
 export const YT_SEARCH_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
+export const YT_COMMENT_API =
+  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=100&key=AIzaSyDJMJWKHSe3ImquL8pow4VDvGP-16Prq8E&videoId=";
+
 export const LIVE_CHAT_OFFSET = 20;

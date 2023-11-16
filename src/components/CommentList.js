@@ -3,11 +3,11 @@ import Comment from "./Comment";
 
 const CommentList = ({ comments }) => {
   return comments.map((comment) => (
-    <div>
+    <div key={comment.id}>
       <Comment comment={comment} />
-      <div className="ml-6 pl-6 border-l ">
+      {/* <div className="ml-6 pl-6 border-l ">
         <CommentList comments={comment.reply} />
-      </div>
+      </div> */}
     </div>
   ));
 };
