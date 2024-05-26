@@ -46,12 +46,12 @@ const ButtonList = () => {
   const box = document.getElementById("btnCarousel");
 
   const handlePrevClick = () => {
-    if (!box.clientWidth) return;
+    if (!box?.clientWidth) return;
     let width = box.clientWidth;
     box.scrollLeft = box.scrollLeft - width;
   };
   const handleNextClick = () => {
-    if (!box.clientWidth) return;
+    if (!box?.clientWidth) return;
     let width = box.clientWidth;
     box.scrollLeft = box.scrollLeft + width;
   };

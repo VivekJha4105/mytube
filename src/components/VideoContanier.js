@@ -10,7 +10,6 @@ const VideoContanier = () => {
     const res = await fetch(POPULAR_VIDEOS_API);
     const data = await res.json();
     setVideos(data.items);
-    // console.log(data);
   };
 
   useEffect(() => {

@@ -8,7 +8,6 @@ import LiveChat from "./LiveChat";
 const WatchPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams(); // Gives the searchParams string and the setter function to set and make changes to the query params.
-  //   console.log(searchParams);
 
   useEffect(() => {
     dispatch(closeMenu());
@@ -19,7 +18,7 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col p-4 w-[100%] bg-slate-700">
+    <div className="flex flex-col p-4 w-[100%] bg-background">
       <div className="p-1 mx-auto flex w-[85%] h-[30rem]">
         <iframe
           className="w-[100%] h-[100%]"
