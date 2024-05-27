@@ -19,29 +19,29 @@ const LiveChat = () => {
     setLiveMessage("");
   };
 
-  // useEffect(() => {
-  //   const timerId = setInterval(() => {
-  //     //   API Polling.
-  //     dispatch(
-  //       addChatMessage({
-  //         name: getRandomName(),
-  //         message: getRandomText(Math.floor(Math.random() * 10 + 10)),
-  //       })
-  //     );
-  //   }, 1000);
-  //   return () => clearInterval(timerId);
-  // }, []);
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      //   API Polling.
+      dispatch(
+        addChatMessage({
+          name: getRandomName(),
+          message: getRandomText(Math.floor(Math.random() * 10 + 10)),
+        })
+      );
+    }, 1000);
+    return () => clearInterval(timerId);
+  }, []);
 
   return (
     <div className="w-[45%]">
-      <div className="w-full h-full ml-2 p-2  flex flex-col-reverse rounded-lg shadow-lg overflow-y-scroll bg-pink-400">
+      <div className="w-full h-full ml-2 p-2  flex flex-col-reverse rounded-lg shadow-lg overflow-y-scroll bg-commentContainer">
         {chatMessages.map((chat, index) => (
           <ChatMessage key={index} name={chat.name} message={chat.message} />
         ))}
       </div>
 
       <form
-        className="m-2 p-2 w-[100%] flex items-center rounded-lg bg-red-400"
+        className="m-2 p-2 w-[100%] flex items-center rounded-lg bg-commentContainer"
         onSubmit={(e) => e.preventDefault()}
       >
         <textarea
@@ -52,7 +52,7 @@ const LiveChat = () => {
           onChange={(e) => setLiveMessage(e.target.value)}
         />
         <button
-          className="bg-blue-300 p-2 w-[18%] rounded-r-lg"
+          className="bg-chatButton p-2 w-[18%] rounded-r-lg text-white"
           onClick={handleClick}
         >
           Send

@@ -4,7 +4,7 @@ import { USER_ICON } from "../utils/constants";
 const Comment = ({ comment }) => {
   const commentData = comment?.snippet?.topLevelComment?.snippet;
   return (
-    <div className="m-2 p-2 flex bg-gray-200 rounded-lg shadow-lg">
+    <div className="m-2 p-2 flex bg-sidebarBackground rounded-lg shadow-lg">
       <img className="w-12 h-[50%]" src={USER_ICON} alt="User" />
       <div className="flex flex-col">
         <div className="ml-4">

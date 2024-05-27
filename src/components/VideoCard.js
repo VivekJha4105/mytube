@@ -4,7 +4,7 @@ const VideoCard = ({ videoData }) => {
   const { snippet, statistics } = videoData;
   const { channelTitle, title, thumbnails, publishedAt } = snippet;
   return (
-    <div className="px-2 pt-3 pb-2 w-[100%] shadow-lg">
+    <div className="px-2 pt-3 pb-2 w-[100%] shadow-lg bg-cardBackground rounded-lg">
       <div className="w-[100%]">
         <img
           className="rounded-xl hover:rounded-none"
